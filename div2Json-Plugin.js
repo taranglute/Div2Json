@@ -1,55 +1,53 @@
 /*
-            Author : Tarang Lute
-            Plug-in Name : Div2Json
-            Description:This plug-in generate json data from div elements.Key Duplication not supported.
-            Currently supports controls like text-box,check-box,select. 
-        */
-        (function ($) {
-            $.fn.div2Json = function () {
-                var elements = [];
-                var jsonData = {};
-                var inDiv = this;
+    Author : Tarang Lute
+    Plug-in Name : Div2Json
+    Description:This plug-in generate json data from div elements.Key Duplication not supported.
+    Currently supports controls like text-box,check-box,select. 
+*/
+(function ($) {
+    $.fn.div2Json = function () {
+        var elements = [];
+        var jsonData = {};
+        var inDiv = this;
         
-                elements.push({
-                    'control': 'input[type=radio]',
-                    'value': 'value'
-                });
+        elements.push({
+            'control': 'input[type=radio]',
+            'value': 'value'
+        });
                 
-                elements.push({
-                    'control': 'input[type=hidden]',
-                    'value': 'value'
-                });
+        elements.push({
+            'control': 'input[type=hidden]',
+            'value': 'value'
+        });
                 
-                elements.push({
-                    'control': 'input[type=checkbox]',
-                    'value': 'checked'
-                });
-                elements.push({
-                    'control': 'input[type=text]',
-                    'value': 'value'
-                });
-                elements.push({
-                    'control': 'option:selected',
-                    'value': 'value'
-                });
+        elements.push({
+            'control': 'input[type=checkbox]',
+            'value': 'checked'
+        });
+        elements.push({
+            'control': 'input[type=text]',
+            'value': 'value'
+        });
+        elements.push({
+            'control': 'option:selected',
+            'value': 'value'
+        });
         
-                // Parse for each element
-                $.each(elements, function (index) {
-                    $(inDiv).find(elements[index]['control']).each(function () {
-                        var level;
-                        if (typeof (this) == 'select') {
-                            level = $(this).parent().attr("datalevel");
-                        } else {
-                            level = $(this).attr("datalevel");
-                        }
-                        if (typeof (level) !== 'undefined') {
-                            HasProperty(jsonData, level, this[elements[index]['value']]);
-                        }
-                    });
-                });
-                return jsonData;
-            };
-        } (jQuery));
+        // Parse for each element
+        $.each(elements, function (index) {
+            $(inDiv).find(elements[index]['control']).each(function () {
+                var level;
+                if (typeof (this) == 'select') {
+                    level = $(this).parent().attr("datalevel");
+                } else {
+                    level = $(this).attr("datalevel");
+                }
+                if (typeof (level) !== 'undefined') {
+                    HasProperty(jsonData, level, this[elements[index]['value']]);
+                }
+            });
+        });
+
         function HasProperty(obj, nestlevel, value) {
             var parts = nestlevel.split('-');
             for (var i = 0, l = parts.length; i < l; i++) {
@@ -68,3 +66,7 @@
                 }
             }
         }
+
+        return jsonData;
+    };
+} (jQuery));
