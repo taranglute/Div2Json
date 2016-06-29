@@ -8,7 +8,7 @@
     <script type="text/javascript">
         $(function () {
             var jsondata = $(".mnContainer").div2Json();
-            $(".alert").html(JSON.stringify(jsondata));
+            $(".alert").html(JSON.stringify(jsondata, null,4));
         });
     </script>
 </head>
@@ -24,7 +24,7 @@
                 Email</label>
             <input type="text" name="email" id="email" datalevel="Trigger-Email" class="form-control" value="tjcool" />
         </div>
-        <div class="alert alert-success" style="margin-top:15px;"></div>
+        <div class="alert alert-info" style="margin-top:15px;white-space: pre;font-family: monospace;"></div>
     </div>
 </body>
 </html>
