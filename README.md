@@ -3,8 +3,8 @@
 Div2Json plug-in generate json data from div elements.To generate user need to define and level. So far key Duplication not supported. It currently supports controls like text-box,check-box,select.
 So far there are enhancements i thought of and i am currently working on them.
 
-How to use ?
-To use plugin, you need to add attribute "datalevel" to element.
+How to use ?</br>
+To use plugin, you need to add attribute <b>"datalevel"</b> to element.
 
 Example
 <input type="text" datalevel="level-levelname" value="test" />
