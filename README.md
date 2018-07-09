@@ -1,31 +1,38 @@
 # Div2Json
 
-Div2Json plug-in generate json data from div elements.To generate user need to define and level. So far key Duplication not supported. It currently supports controls like text-box,check-box,select.
-So far there are enhancements i thought of and i am currently working on them.
+Div2Json plug-in generate json data from div elements.To generate user need to define and level. So far key Duplication not supported. It currently supports controls like text-box,check-box,select. So far there are enhancements i thought of and i am currently working on them.
 
-How to use ?</br>
+###### How to use ?
+----------------------------------------
 To use plugin, you need to add attribute <b>"datalevel"</b> to element.
 
-Example
+###### Example 1 - Working with Inputfield.
+----------------------------------------
+```
 <input type="text" datalevel="level-levelname" value="test" />
-
-Json Output
+```
+###### Json Output
+```
 {
 	level:{
 		levelname:"test"
 	}
 }
-
-<h4>For Select</h4>
+```
+###### Example 2 - Working with Selectoption
+---------------------------------------------
+```
 <select>
 	<option datalevel="level-select">Value 1</option>
 	<option datalevel="level-select">Value 2</option>
 	<option datalevel="level-select">Value 3</option>
  </select>
-
-Json Output
+```
+###### Json Output
+```
 { 
 	"level": { 
 		"select": "Value 1" 
 	}
 }	
+```
