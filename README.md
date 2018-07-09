@@ -12,7 +12,7 @@ To use plugin, you need to add attribute <b>"datalevel"</b> to element.
 <input type="text" datalevel="level-levelname" value="test" />
 ```
 ##### Json Output
-``` javascript
+```javascript
 ```
 {
 	level:{
@@ -22,7 +22,7 @@ To use plugin, you need to add attribute <b>"datalevel"</b> to element.
 ```
 ##### Example 2 - Working with Selectoption
 ---------------------------------------------
-``` javascript
+```javascript
 ```
 <select>
 	<option datalevel="level-select">Value 1</option>
@@ -31,7 +31,7 @@ To use plugin, you need to add attribute <b>"datalevel"</b> to element.
  </select>
 ```
 ##### Json Output
-``` javascript
+```javascript
 ```
 { 
 	"level": { 
